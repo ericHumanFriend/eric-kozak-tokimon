@@ -14,8 +14,9 @@ body {
 
 #main {
     background-color: white;
-    border-bottom: 50px solid black;
-    border-top: 50px solid black;
+    border-bottom: 50px solid #202020;
+    border-top: 50px solid #202020;
+    box-shadow: 0px 0px 10px;
     height: 100%;
     padding: 25px;
     width: auto;
@@ -32,17 +33,14 @@ form {
 
 /* Table */
     table {
+        border-collapse: collapse;
         table-layout: fixed ;
         width: 100% ;
     }
 
-    table,
-    table tr,
-    table tr th, 
+    table tr th,
     table tr td {
         border: 1px solid black;
-        border-spacing: 0;
-        padding: 0;
     }
 
     table tr th {
@@ -58,11 +56,11 @@ form {
 
 #extra { text-align: center; }
 #extra p a {
-    border-color: black;
+    background-color: #505050;
+    border-color: #505050;
     border-radius: 3px;
     border-style: solid;
-    border-width: 2px;
-    color: black;
+    color: white;
     font-family: "DINWebMedium",sans-serif;
     font-size: 1em;
     margin: 0.5em;
