@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+        <title> Grade Calculator </title>
+		<link rel="stylesheet" href="calculator.css">
+    </head>
+	
+	<body>
+
+        <div id="main"> 
+
+            <h1> Grade Calculator </h1>
+
+            <form>
+                    
+                <h3 class="form_header"> Activities </h3>
+                <p> Give grades to the numeric activites: </p>
+
+                <table id="calculator">
+                    <tr>
+                        <th> Name </th>
+                        <th> short_name </th>
+                        <th> Weight </th>
+                        <th> Grade </th>
+                        <th> Percent </th>
+                    </tr>
+                    <tr>
+                        <td class = "activity_name"> Activity 1 </td>
+                        <td class = "short_name"> A1 </td>
+                        <td> <input class="weight"> </td>
+                        <td> 
+                            <input class="numerator" oninput="getPercentages()"> /
+                            <br> <br>
+                            <input class="denominator" oninput="getPercentages()">
+                        </td>
+                        <td class="percent"> </td>
+                    </tr> <!-- Activity 1 -->
+                    <tr>
+                        <td class = "activity_name"> Activity 2 </td>
+                        <td class = "short_name"> A2 </td>
+                        <td> <input class="weight"> </td>
+                        <td>
+                            <input class="numerator" oninput="getPercentages()"> /
+                            <br> <br>
+                            <input class="denominator" oninput="getPercentages()">
+                        </td>
+                        <td class="percent"> </td>
+                    </tr> <!-- Activity 3 -->
+                    <tr>
+                        <td class = "activity_name"> Activity 3 </td>
+                        <td class = "short_name"> A3 </td>
+                        <td> <input class="weight"> </td>
+                        <td>
+                            <input class="numerator" oninput="getPercentages()"> /
+                            <br> <br>
+                            <input class="denominator" oninput="getPercentages()">
+                        </td>
+                        <td class="percent"> </td>
+                    </tr> <!-- Activity 3 -->
+                    <tr>
+                        <td class = "activity_name"> Activity 4 </td>
+                        <td class = "short_name"> A4 </td>
+                        <td> <input class="weight"> </td>
+                        <td>
+                            <input class="numerator" oninput="getPercentages()"> /
+                            <br> <br>
+                            <input class="denominator" oninput="getPercentages()">
+                        </td>
+                        <td class="percent"> </td>
+                    </tr> <!-- Activity 4 -->
+                </table>
+
+                <div id="extra">
+                    <p>
+                        <a onclick="addRow()"> ADD ROW </a>
+                        <a onclick="removeRow()"> REMOVE ROW </a>
+                    <p>
+                </div>
+
+                
+                <h3> Result </h3>
+                <p id="result"> </p>
+
+                <div id="calculate">
+                    <p>
+                        <a onclick="getWeighted()"> WEIGHTED </a>
+                        <a onclick="getMean()"> MEAN </a>
+                    </p>
+                </div>
+
+            </form>
+        </div>
+        
+        <script src="calculator.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        
+    </body>
+    
+</html
