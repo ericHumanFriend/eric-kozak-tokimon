@@ -51,7 +51,11 @@ form {
 
     table tr td { padding: 5px; }
 
-    input { height: 2.25em; width: 50%;}
+    input {
+        border-radius: 0px;
+        height: 2.25em;
+        width: 50%;
+    }
 /* END Table */
 
 #extra { text-align: center; }
