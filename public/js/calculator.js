@@ -1,5 +1,3 @@
-console.log("hello eric");
-
 let calculator = document.getElementById("calculator");
 
 let numericPercentages = [];
