@@ -1,26 +1,19 @@
 /*
-The contents of this file are taken directly from here:
-https://github.com/expressjs/express/issues/3378
-I am currently testing this mostly unedited
-to see if it makes Heroku work
+The contents of this file are copied directly from Nick Yang's work temporarily only in an attempt
+to find any way to get Heroku to work. It will be replaced with my original work as soon as possible.
 */
 
-var express = require('express');
-var app = express();
-var path = require('path');
+const express = require('express');
+const path = require('path');
+const PORT = process.env.PORT || 5000;
+
 const VIEWS = path.join(__dirname, 'views');
-var port = process.env.PORT || 8080;
 
-app.set('views', VIEWS);
-app.set('view engine', 'html');
-app.use(express.static('public'));
-
-app.use(express.static(path.join(__dirname, 'public')));
-
-app.get('/', function (req, res) {
-  res.sendFile('calculator.html', { root : VIEWS });
-});
-
-app.listen(port, function () {
-  console.log('Example app listening on 8080!');
-});
+express()
+    .use(express.static(path.join(__dirname, 'public')))
+    .set('views', VIEWS)
+    .set('view engine', 'html')
+    .use(express.static('public'))
+    .use(express.static(path.join(__dirname, 'public')))
+    .get('/', (req, res) => res.sendFile('calculator.html', { root : VIEWS }))
+    .listen(PORT, () => consolelog(`Listening on ${ PORT }`));
