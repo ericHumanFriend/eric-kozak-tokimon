@@ -10,5 +10,5 @@ express()
   .set('view engine', 'html')
   .use(express.static('public'))
   .use(express.static(path.join(__dirname, 'public')))
-  .get('/', (req, res) => res.sendFile('calculator.html', { root : VIEWS }))
+  .get('/', (req, res) => res.sendFile('tokimon.html', { root : VIEWS }))
   .listen(PORT, () => console.log(`Listening on ${ PORT }`));
