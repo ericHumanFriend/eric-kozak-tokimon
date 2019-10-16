@@ -56,7 +56,7 @@ express()
             if (error) {
                 res.end(error.toString());
             } else {
-                var results = result.rows[0];
+                let results = result.rows[0];
                 res.redirect(`/tokimon/${results.id}`)
             }
         })
@@ -81,6 +81,47 @@ express()
                 res.end(error.toString());
             } else {
                 res.redirect('/');
+            }
+        })
+    })
+    .post('/edit/:id', (req, res) => {
+        let idQuery = `SELECT * FROM tokimon WHERE id=${req.params.id}`;
+
+        pool.query(idQuery, (error, result) => {
+            if (error) {
+                res.end(error.toString());
+            } else {
+                let results = {'tokimon': result.rows[0]};
+                res.render('edit', results);
+            }
+        })
+    })
+    .post('/update/:id', (req, res) => {
+        let toki = req.body.toki;
+        let weight = parseFloat(req.body.weight);
+        let height = parseFloat(req.body.height);
+        let fly = parseInt(req.body.fly);
+        let fight = parseInt(req.body.fight);
+        let fire = parseInt(req.body.fire);
+        let water = parseInt(req.body.water);
+        let electric = parseInt(req.body.electric);
+        let ice = parseInt(req.body.ice);
+        let trainer = req.body.trainer;
+
+        let total = fly + fight + fire + water + electric + ice;
+
+        let updateQuery = `UPDATE tokimon SET name='${toki}', weight=${weight},
+        height=${height}, fly=${fly}, fight=${fight}, fire=${fire}, water=${water},
+        electric=${electric}, ice=${ice}, total=${total}, trainer='${trainer}'
+        WHERE id=${req.params.id}`;
+
+        console.log(updateQuery);
+
+        pool.query(updateQuery, (error, result) => {
+            if (error) {
+                res.end(error.toString());
+            } else {
+                res.redirect(`/tokimon/${req.params.id}`)
             }
         })
     })
