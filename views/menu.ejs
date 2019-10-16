@@ -8,9 +8,9 @@
 	<body>
 
         <div id="main">
-            <p>
-                <%= tokimon%>
-            </p>
+            <% tokimon.forEach((item, index) => { %>
+                <p> <%= item.name %> </p>
+            <% }) %>
         </div>
         
         <script src="../public/js/tokimon.js"></script>
