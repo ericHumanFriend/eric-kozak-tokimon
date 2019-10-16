@@ -5,7 +5,7 @@ const pool = new Pool({
     connectionString: process.env.DATABASE_URL,
     ssl: true
 });
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8080;
 
 const VIEWS = path.join(__dirname, 'views');
 
@@ -15,17 +15,15 @@ express()
     .set('view engine', 'html')
     .use(express.static('public'))
     .use(express.static(path.join(__dirname, 'public')))
-    .get('/', (req, res) => res.sendFile('index.html', {root: VIEWS}))
-    .get('/db', async (req, res) => {
-        try {
-            const client = await pool.connect()
-            const result = await client.query('SELECT * FROM test_table');
-            const results = {'results': (result) ? result.rows : null};
-            res.render('pages/db', results);
-            client.release();
-        } catch (err) {
-            console.error(err);
-            res.send("Error " + err);
-        }
+    .get('/', (req, res) => {
+        let query = 'SELECT * FROM tokimon';
+
+        pool.query(query, (error, result) => {
+            if (error) {
+                res.end(error);
+            }
+            let results = {'tokimon': result.rows};
+            res.render('views/menu', results)
+        });
     })
     .listen(PORT, () => console.log(`Listening on ${PORT}`));
