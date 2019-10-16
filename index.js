@@ -34,18 +34,6 @@ express()
     .get('/add', (req, res) => {
         res.render('add');
     })
-    .get('/tokimon/:id', (req, res) => {
-        let idQuery = `SELECT * FROM tokimon WHERE id=${req.params.id};`;
-
-        pool.query(idQuery, (error, result) => {
-            if (error) {
-                res.end(error.toString());
-            } else {
-                let results = {'tokimon': result.rows[0]};
-                res.render('tokimon', results);
-            }
-        })
-    })
     .post('/add', (req, res) => {
         let toki = req.body.toki;
         let weight = parseFloat(req.body.weight);
@@ -74,6 +62,31 @@ express()
             } else {
                 var results = result.rows[0];
                 res.redirect(`/tokimon/${results.id}`)
+            }
+        })
+    })
+    .get('/tokimon/:id', (req, res) => {
+        let idQuery = `SELECT * FROM tokimon WHERE id=${req.params.id}`;
+
+        pool.query(idQuery, (error, result) => {
+            if (error) {
+                res.end(error.toString());
+            } else {
+                let results = {'tokimon': result.rows[0]};
+                res.render('tokimon', results);
+            }
+        })
+    })
+    .post('/delete/:id', (req, res) => {
+        let idQuery = `DELETE FROM tokimon WHERE id=${req.params.id}`;
+
+        console.log(idQuery);
+
+        pool.query(idQuery, (error, result) => {
+            if (error) {
+                res.end(error.toString());
+            } else {
+                res.redirect('/');
             }
         })
     })
