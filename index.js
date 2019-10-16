@@ -52,10 +52,6 @@ express()
         ${fly}, ${fight}, ${fire}, ${water}, ${electric}, ${ice}, ${total}, '${trainer}')
         RETURNING id`;
 
-        console.log(req.body);
-        console.log(req.body.toki);
-        console.log(addQuery);
-
         pool.query(addQuery, (error, result) => {
             if (error) {
                 res.end(error.toString());
@@ -79,8 +75,6 @@ express()
     })
     .post('/delete/:id', (req, res) => {
         let idQuery = `DELETE FROM tokimon WHERE id=${req.params.id}`;
-
-        console.log(idQuery);
 
         pool.query(idQuery, (error, result) => {
             if (error) {
