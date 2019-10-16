@@ -5,9 +5,11 @@ const pool = new Pool({
     connectionString: process.env.DATABASE_URL,
     ssl: true
 });
-const PORT = process.env.PORT || 5050;
+const PORT = process.env.PORT || 5000;
 
 const VIEWS = path.join(__dirname, 'views');
+
+console.log(process.env.DATABASE_URL);
 
 express()
     .use(express.static(path.join(__dirname, 'public')))
@@ -16,9 +18,11 @@ express()
     .use(express.static('public'))
     .use(express.static(path.join(__dirname, 'public')))
     .get('/', (req, res) => {
-        let query = 'SELECT * FROM tokimon';
+
+        let query = `SELECT * FROM tokimon`;
 
         pool.query(query, (error, result) => {
+            console.log("oh no");
             if (error) {
                 res.end(error);
             }
