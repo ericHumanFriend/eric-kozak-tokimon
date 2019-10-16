@@ -2,24 +2,25 @@
 <!DOCTYPE html>
 <html>
 
-    <ul id=navigate>
-        <li><a href="/">Menu</a></li>
-        <li><a href="/Add">Add</a></li>
-    </ul>
+    <div id=navigate>
+        <a href="/">Menu</a>
+        <a href="/Add">Add</a>
+    </div>
 
 	<head>
         <title> Menu </title>
+        <link rel="stylesheet" href="css/tokimon.css">
     </head>
 	
 	<body>
 
         <div id="main">
             <% tokimon.forEach((item, index) => { %>
-                <p> <%= item.name %> </p>
+                <a href="Tokimon/<%= item.id %>%>"> <%= item.name %> </a>
             <% }) %>
         </div>
         
-        <script src="../public/js/tokimon.js"></script>
+        <script src="js/tokimon.js"></script>
         
     </body>
     

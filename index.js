@@ -9,8 +9,6 @@ const pool = new Pool({
     ssl: false
 });
 
-console.log(process.env.DATABASE_URL);
-
 const VIEWS = path.join(__dirname, 'views');
 
 express()
@@ -20,17 +18,30 @@ express()
     .use(express.static('public'))
     .use(express.static(path.join(__dirname, 'public')))
     .get('/', (req, res) => {
-        let tokiQuery = `SELECT * FROM tokimon`;
+        let allQuery = `SELECT * FROM tokimon`;
 
-        pool.query(tokiQuery, (error, result) => {
+        pool.query(allQuery, (error, result) => {
             if (error) {
                 res.end(error.toString());
+            } else {
+                let results = {'tokimon': result.rows};
+                res.render('menu', results);
             }
-            let results = {'tokimon': result.rows};
-            res.render('menu', results);
         });
     })
     .get('/add', (req, res) => {
         res.render('add');
+    })
+    .get('/tokimon/:id', (req, res) => {
+        let idQuery = `SELECT * FROM tokimon WHERE id=${req.params.id};`;
+
+        pool.query(idQuery, (error, result) => {
+            if (error) {
+                res.end(error.toString());
+            } else {
+                let results = {'tokimon': result.rows[0]};
+                res.render('tokimon', results);
+            }
+        })
     })
     .listen(PORT, () => console.log(`Listening on ${PORT}`));
