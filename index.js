@@ -9,9 +9,6 @@ const pool = new Pool({
     ssl: false
 });
 
-console.log("ERROR MESSAGE");
-console.log("ERROR MESSAGE");
-console.log("ERROR MESSAGE");
 console.log(process.env.DATABASE_URL);
 
 const VIEWS = path.join(__dirname, 'views');
@@ -23,7 +20,7 @@ express()
     .use(express.static('public'))
     .use(express.static(path.join(__dirname, 'public')))
     .get('/', (req, res) => {
-        let tokiQuery = `SELECT * FROM tokiasdfmon`;
+        let tokiQuery = `SELECT * FROM tokimon`;
 
         pool.query(tokiQuery, (error, result) => {
             if (error) {
