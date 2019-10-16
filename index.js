@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 const ejs = require('ejs');
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 5000;
 
 const {Pool} = require('pg');
 const pool = new Pool({
@@ -9,6 +9,9 @@ const pool = new Pool({
     ssl: false
 });
 
+console.log("ERROR MESSAGE");
+console.log("ERROR MESSAGE");
+console.log("ERROR MESSAGE");
 console.log(process.env.DATABASE_URL);
 
 const VIEWS = path.join(__dirname, 'views');
@@ -20,7 +23,7 @@ express()
     .use(express.static('public'))
     .use(express.static(path.join(__dirname, 'public')))
     .get('/', (req, res) => {
-        let tokiQuery = `SELECT * FROM tokimon`;
+        let tokiQuery = `SELECT * FROM tokiasdfmon`;
 
         pool.query(tokiQuery, (error, result) => {
             if (error) {
