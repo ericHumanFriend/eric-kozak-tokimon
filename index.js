@@ -5,10 +5,11 @@ const pool = new Pool({
     connectionString: process.env.DATABASE_URL,
     ssl: true
 });
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8080;
 
 const VIEWS = path.join(__dirname, 'views');
 
+console.log("DATABASE_URL:")
 console.log(process.env.DATABASE_URL);
 
 express()
