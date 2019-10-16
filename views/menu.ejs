@@ -13,13 +13,18 @@
 
 <body>
 
-<table>
+<table id="menu_list">
     <% tokimon.forEach((item, index) => { %>
         <tr>
             <td> <a href="Tokimon/<%= item.id %>"> <%= item.name %> </a> <td>
             <td>
                 <form action="/edit/<%= item.id %>" method="post">
                     <input type="submit" value="Edit">
+                </form>
+            </td>
+            <td>
+                <form action="/duplicate/<%= item.id %>" method="post">
+                    <input type="submit" value="Duplicate">
                 </form>
             </td>
             <td>

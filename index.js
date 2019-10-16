@@ -115,13 +115,26 @@ express()
         electric=${electric}, ice=${ice}, total=${total}, trainer='${trainer}'
         WHERE id=${req.params.id}`;
 
-        console.log(updateQuery);
-
         pool.query(updateQuery, (error, result) => {
             if (error) {
                 res.end(error.toString());
             } else {
                 res.redirect(`/tokimon/${req.params.id}`)
+            }
+        })
+    })
+    .post('/duplicate/:id', (req, res) => {
+        let cloneQuery = `INSERT INTO tokimon (name, weight, height, fly, fight,
+        fire, water, electric, ice, total, trainer)
+        SELECT name, weight, height, fly, fight, fire, water, electric, ice, total, trainer
+        FROM tokimon
+        WHERE id=${req.params.id}`;
+
+        pool.query(cloneQuery, (error, result) => {
+            if (error) {
+                res.end(error.toString());
+            } else {
+                res.redirect(`/`);
             }
         })
     })
