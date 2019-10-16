@@ -20,14 +20,14 @@ express()
     .use(express.static('public'))
     .use(express.static(path.join(__dirname, 'public')))
     .get('/', (req, res) => {
-        var tokiQuery = `SELECT * FROM tokimon`;
+        let tokiQuery = `SELECT * FROM tokimon`;
 
         pool.query(tokiQuery, (error, result) => {
             if (error) {
                 console.log("oh man");
                 res.end(error.toString());
             }
-            results = {'tokimon': result.rows};
+            let results = {'tokimon': result.rows};
             res.render('calculator', results)
         })
     })
