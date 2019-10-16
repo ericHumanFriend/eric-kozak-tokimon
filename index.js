@@ -5,7 +5,7 @@ const pool = new Pool({
     connectionString: process.env.DATABASE_URL,
     ssl: true
 });
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 5050;
 
 const VIEWS = path.join(__dirname, 'views');
 
