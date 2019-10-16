@@ -24,11 +24,7 @@ express()
 
         pool.query(tokiQuery, (error, result) => {
             if (error) {
-                console.log("oh man");
-                let results = {'tokimon': "oh no it broke"};
-                res.render('calculator', results);
-                return;
-                //res.end(error);
+                res.end(error.toString());
             }
             let results = {'tokimon': result.rows};
             res.render('calculator', results)
