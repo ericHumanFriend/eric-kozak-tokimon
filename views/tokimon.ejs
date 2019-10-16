@@ -28,16 +28,15 @@
             <li>Total: <%= tokimon.total %></li>
             <li>Trainer: <%= tokimon.trainer %></li>
         </ul>
+
+        <form action="/edit/<%= tokimon.id %>" method="post">
+            <input type="submit" value="Edit" class="submit">
+        </form>
+        <form action="/delete/<%= tokimon.id %>" method="post">
+            <input type="submit" value="Delete" class="delete">
+        </form>
     </div>
 </div>
-
-
-<form action="/edit/<%= tokimon.id %>" method="post">
-    <input type="submit" value="Edit" class="submit">
-</form>
-<form action="/delete/<%= tokimon.id %>" method="post">
-    <input type="submit" value="Delete" class="delete">
-</form>
 
 </body>
 

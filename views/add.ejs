@@ -23,36 +23,35 @@
                 </tr>
                 <tr>
                     <td>Weight:</td>
-                    <td><input class="attr_input" type="number" min=0 name="weight" step="any" required/></td>
+                    <td><input class="attr_input" type="number" min=0 name="weight" id="weight" step="any" required/></td>
                 </tr>
                 <tr>
                     <td>Height:</td>
-                    <td><input class="attr_input" type="number" min=0 name="height" step="any" required/></td>
+                    <td><input class="attr_input" type="number" min=0 name="height" id="height" step="any" required/></td>
                 </tr>
                 <tr>
                     <td>Fly:</td>
-                    <td><input class="attr_input" type="number" min=0 max=100 name="fly" step=1 required/></td>
+                    <td><input class="attr_input" type="number" min=0 max=100 name="fly" id="fly" step=1 required/></td>
                 </tr>
                 <tr>
                     <td>Fight:</td>
-                    <td><input class="attr_input" type="number" min=0 max=100 name="fight" step=1 required/></td>
+                    <td><input class="attr_input" type="number" min=0 max=100 name="fight" id="fight" step=1 required/></td>
                 </tr>
                 <tr>
                     <td>Fire:</td>
-                    <td><input class="attr_input" type="number" min=0 max=100 name="fire" step=1 required/></td>
+                    <td><input class="attr_input" type="number" min=0 max=100 name="fire" id="fire" step=1 required/></td>
                 </tr>
                 <tr>
                     <td>Water:</td>
-                    <td><input class="attr_input" type="number" min=0 max=100 name="water" step=1 required/></td>
+                    <td><input class="attr_input" type="number" min=0 max=100 name="water" id="water" step=1 required/></td>
                 </tr>
                 <tr>
                     <td>Electric:</td>
-                    <td><input class="attr_input" type="number" min=0 max=100 name="electric" step=1 required/></td>
+                    <td><input class="attr_input" type="number" min=0 max=100 name="electric" id="electric" step=1 required/></td>
                 </tr>
                 <tr>
                     <td>Ice:</td>
-                    :</td>
-                    <td><input class="attr_input" type="number" min=0 max=100 name="ice" step=1 required/></td>
+                    <td><input class="attr_input" type="number" min=0 max=100 name="ice" id="ice" step=1 required/></td>
                 </tr>
                 <tr>
                     <td>Trainer:</td>
@@ -60,11 +59,15 @@
                 </tr>
             </table>
 
-            <input type="submit" value="Add" class="submit">
+            <button type="button" onclick="randomize()"> Randomize Attributes </button>
+
+            <input type="submit" value="Add" class="submit"/>
 
         </form>
     </div>
 </div>
+
+<script src="js/tokimon.js"></script>
 
 </body>
 

@@ -24,42 +24,41 @@
                 </tr>
                 <tr>
                     <td>Weight:</td>
-                    <td><input class="attr_input" type="number" min=0 name="weight" step="any" required
+                    <td><input class="attr_input" type="number" min=0 name="weight" id="weight" step="any" required
                                value=<%=tokimon.weight%> /></td>
                 </tr>
                 <tr>
                     <td>Height:</td>
-                    <td><input class="attr_input" type="number" min=0 name="height" step="any" required
+                    <td><input class="attr_input" type="number" min=0 name="height" id="height" step="any" required
                                value=<%=tokimon.height%> /></td>
                 </tr>
                 <tr>
                     <td>Fly:</td>
-                    <td><input class="attr_input" type="number" min=0 max=100 name="fly" step=1 required
+                    <td><input class="attr_input" type="number" min=0 max=100 name="fly" id="fly" step=1 required
                                value=<%=tokimon.fly%> /></td>
                 </tr>
                 <tr>
                     <td>Fight:</td>
-                    <td><input class="attr_input" type="number" min=0 max=100 name="fight" step=1 required
+                    <td><input class="attr_input" type="number" min=0 max=100 name="fight" id="fight" step=1 required
                                value=<%=tokimon.fight%> /></td>
                 </tr>
                 <tr>
                     <td>Fire:</td>
-                    <td><input class="attr_input" type="number" min=0 max=100 name="fire" step=1 required
+                    <td><input class="attr_input" type="number" min=0 max=100 name="fire" id="fire" step=1 required
                                value=<%=tokimon.fire%> /></td>
                 </tr>
                 <tr>
                     <td>Water:</td>
-                    <td><input class="attr_input" type="number" min=0 max=100 name="water" step=1 required
+                    <td><input class="attr_input" type="number" min=0 max=100 name="water" id="water" step=1 required
                                value=<%=tokimon.water%> /></td>
                 </tr>
                 <tr>
                     <td>Electric:</td>
-                    <td><input class="attr_input" type="number" min=0 max=100 name="electric" step=1 required
+                    <td><input class="attr_input" type="number" min=0 max=100 name="electric" id="electric" step=1 required
                                value=<%=tokimon.electric%> /></td>
                 </tr>
                 <tr>
                     <td>Ice:</td>
-                    :</td>
                     <td><input class="attr_input" type="number" min=0 max=100 name="ice" step=1 required
                                value=<%=tokimon.ice%> /></td>
                 </tr>
@@ -70,11 +69,15 @@
                 </tr>
             </table>
 
+            <button type="button" onclick="randomize()"> Randomize Attributes </button>
+
             <input type="submit" value="Update" class="submit">
 
         </form>
     </div>
 </div>
+
+<script src="/js/tokimon.js"></script>
 
 </body>
 
