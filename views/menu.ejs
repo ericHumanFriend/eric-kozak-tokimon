@@ -15,11 +15,11 @@
 	<body>
 
         <ul id="main">
-            <li>
             <% tokimon.forEach((item, index) => { %>
+                <li>
                 <a href="Tokimon/<%= item.id %>%>"> <%= item.name %> </a>
+                </li>
             <% }) %>
-            </li>
         </ul>
         
         <script src="js/tokimon.js"></script>
