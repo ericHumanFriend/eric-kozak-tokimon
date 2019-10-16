@@ -13,13 +13,24 @@
 
 <body>
 
-<ul id="main">
+<table>
     <% tokimon.forEach((item, index) => { %>
-        <li>
-            <a href="Tokimon/<%= item.id %>"> <%= item.name %> </a>
-        </li>
+        <tr>
+            <td> <a href="Tokimon/<%= item.id %>"> <%= item.name %> </a> <td>
+            <td>
+                <form action="/edit/<%= item.id %>" method="post">
+                    <input type="submit" value="Edit">
+                </form>
+            </td>
+            <td>
+                <form action="/delete/<%= item.id %>" method="post">
+                    <input type="submit" value="Delete">
+                </form>
+            </td>
+
+        </tr>
     <% }) %>
-</ul>
+</table>
 
 </body>
 
