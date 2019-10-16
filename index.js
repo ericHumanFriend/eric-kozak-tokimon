@@ -127,8 +127,7 @@ express()
         let cloneQuery = `INSERT INTO tokimon (name, weight, height, fly, fight,
         fire, water, electric, ice, total, trainer)
         SELECT name, weight, height, fly, fight, fire, water, electric, ice, total, trainer
-        FROM tokimon
-        WHERE id=${req.params.id}`;
+        FROM tokimon WHERE id=${req.params.id}`;
 
         pool.query(cloneQuery, (error, result) => {
             if (error) {

@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <html>
 
-<div id=navigate>
-    <a href="/">Menu</a>
-    <a href="/add">Add</a>
-</div>
-
 <head>
     <title> Menu </title>
     <link rel="stylesheet" href="/css/tokimon.css">
@@ -13,28 +8,35 @@
 
 <body>
 
-<div id="main">
-    <ul>
-        <li>Name: <%= tokimon.name %></li>
-        <li>Weight: <%= tokimon.weight %></li>
-        <li>Height: <%= tokimon.height %></li>
-        <li>Fly: <%= tokimon.fly %></li>
-        <li>Fight: <%= tokimon.fight %></li>
-        <li>Fire: <%= tokimon.fire %></li>
-        <li>Water: <%= tokimon.water %></li>
-        <li>Electric: <%= tokimon.electric %></li>
-        <li>Ice: <%= tokimon.ice %></li>
-        <li>Total: <%= tokimon.total %></li>
-        <li>Trainer: <%= tokimon.trainer %></li>
-    </ul>
+<div class="main">
+    <div class=navigate>
+        <h2> <a href="/">Menu</a> <a href="/add">Add</a> </h2>
+    </div>
+
+    <div class="inset">
+        <h2>Name: <%= tokimon.name %></h2>
+
+        <ul>
+            <li>Weight: <%= tokimon.weight %></li>
+            <li>Height: <%= tokimon.height %></li>
+            <li>Fly: <%= tokimon.fly %></li>
+            <li>Fight: <%= tokimon.fight %></li>
+            <li>Fire: <%= tokimon.fire %></li>
+            <li>Water: <%= tokimon.water %></li>
+            <li>Electric: <%= tokimon.electric %></li>
+            <li>Ice: <%= tokimon.ice %></li>
+            <li>Total: <%= tokimon.total %></li>
+            <li>Trainer: <%= tokimon.trainer %></li>
+        </ul>
+    </div>
 </div>
 
 
 <form action="/edit/<%= tokimon.id %>" method="post">
-    <input type="submit" value="Edit">
+    <input type="submit" value="Edit" class="submit">
 </form>
 <form action="/delete/<%= tokimon.id %>" method="post">
-    <input type="submit" value="Delete">
+    <input type="submit" value="Delete" class="delete">
 </form>
 
 </body>

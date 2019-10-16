@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <html>
 
-<div id=navigate>
-    <a href="/">Menu</a>
-    <a href="/add">Add</a>
-</div>
-
 <head>
     <title> Menu </title>
     <link rel="stylesheet" href="css/tokimon.css">
@@ -13,29 +8,40 @@
 
 <body>
 
-<table id="menu_list">
-    <% tokimon.forEach((item, index) => { %>
-        <tr>
-            <td> <a href="Tokimon/<%= item.id %>"> <%= item.name %> </a> <td>
-            <td>
-                <form action="/edit/<%= item.id %>" method="post">
-                    <input type="submit" value="Edit">
-                </form>
-            </td>
-            <td>
-                <form action="/duplicate/<%= item.id %>" method="post">
-                    <input type="submit" value="Duplicate">
-                </form>
-            </td>
-            <td>
-                <form action="/delete/<%= item.id %>" method="post">
-                    <input type="submit" value="Delete">
-                </form>
-            </td>
+<div class="main">
+    <div class=navigate>
+        <h2> <a href="/">Menu</a> <a href="/add">Add</a> </h2>
+    </div>
 
-        </tr>
-    <% }) %>
-</table>
+    <div class="inset">
+
+        <h1> Tokidex </h1>
+
+        <table class="menu_list">
+            <% tokimon.forEach((item, index) => { %>
+                <tr>
+                    <td> <h3> <a href="Tokimon/<%= item.id %>" class="toki_name"> <%= item.name %> </a> </h3> </td>
+                    <td>
+                        <form action="/edit/<%= item.id %>" method="post">
+                            <input type="submit" value="Edit" class="submit">
+                        </form>
+                    </td>
+                    <td>
+                        <form action="/duplicate/<%= item.id %>" method="post">
+                            <input type="submit" value="Duplicate" class="submit">
+                        </form>
+                    </td>
+                    <td>
+                        <form action="/delete/<%= item.id %>" method="post" class="caution">
+                            <input type="submit" value="Delete" class="delete">
+                        </form>
+                    </td>
+
+                </tr>
+            <% }) %>
+        </table>
+    </div>
+</div>
 
 </body>
 

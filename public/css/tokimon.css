@@ -1,7 +1,73 @@
-input {
+
+/* Red Color: #A6192E */
+/* Form Background_Color: #E9EFF1 */
+/* Form header Background_Color: #DDDDDD */
+
+body {
+    background-color: #A6192E;
+    margin: 0;
+    padding: 50px;
+}
+
+.main {
+    background-color: white;
+    border-bottom: 50px solid #202020;
+    border-top: 50px solid #202020;
+    box-shadow: 0px 0px 10px;
+    height: 100%;
+    padding: 25px;
     width: 100%;
 }
 
-#menu_list {
+.inset {
+    background-color: #E9EFF1;
+    padding: 1em;
+    width: fit-content;
+}
 
+.navigate a {margin: 0.5em;}
+
+.toki_name {
+    margin: 1em;
+}
+
+table {
+    border-collapse: collapse;
+    width: fit-content;
+}
+
+table tr td {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+a {
+    color: black;
+}
+
+.attr_input {
+    width: 95%;
+}
+
+.submit {
+    background-color: #505050;
+    border-color: #505050;
+    border-radius: 3px;
+    border-style: solid;
+    color: white;
+    font-size: 1em;
+    margin: 0.5em;
+    padding: 0.5em 1em;
+    text-decoration: none;
+}
+
+.delete {
+    background-color: #A6192E;
+    border-color: #A6192E;
+    border-radius: 3px;
+    color: white;
+    font-size: 1em;
+    margin: 0.5em;
+    padding: 0.5em 1em;
+    text-decoration: none;
 }
