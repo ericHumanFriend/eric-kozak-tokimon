@@ -4,7 +4,7 @@
 
     <div id=navigate>
         <a href="/">Menu</a>
-        <a href="/Add">Add</a>
+        <a href="/add">Add</a>
     </div>
 
     <head>
@@ -13,19 +13,19 @@
     </head>
 
     <body>
-        <form name="add tokimon" action="/add" method="post">
+        <form action="/add" method="post">
             <table> Enter new tokimon attributes
                 <tr>
                     <td>Name:</td>
-                    <td><input type="text" name="name" required /></td>
+                    <td><input type="text" name="toki" required /></td>
                 </tr>
                 <tr>
                     <td>Weight:</td>
-                    <td><input type="number" min=0 name="weight" required /></td>
+                    <td><input type="number" min=0 name="weight" step="any" required /></td>
                 </tr>
                 <tr>
                     <td>Height:</td>
-                    <td><input type="number" min=0 name="height" required /></td>
+                    <td><input type="number" min=0 name="height" step="any" required /></td>
                 </tr>
                 <tr>
                     <td>Fly:</td>
@@ -53,9 +53,11 @@
                 </tr>
                 <tr>
                     <td>Trainer:</td>
-                    <td><input type="text" name="name" required /></td>
+                    <td><input type="text" name="trainer" required /></td>
                 </tr>
             </table>
+
+            <input type="submit">
 
         </form>
 

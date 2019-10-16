@@ -15,6 +15,8 @@ express()
     .use(express.static(path.join(__dirname, 'public')))
     .set('views', VIEWS)
     .set('view engine', 'ejs')
+    .use(express.json())
+    .use(express.urlencoded({ extended: false }))
     .use(express.static('public'))
     .use(express.static(path.join(__dirname, 'public')))
     .get('/', (req, res) => {
@@ -44,4 +46,36 @@ express()
             }
         })
     })
+    .post('/add', (req, res) => {
+        let toki = req.body.toki;
+        let weight = parseFloat(req.body.weight);
+        let height = parseFloat(req.body.height);
+        let fly = parseInt(req.body.fly);
+        let fight = parseInt(req.body.fight);
+        let fire = parseInt(req.body.fire);
+        let water = parseInt(req.body.water);
+        let electric = parseInt(req.body.electric);
+        let ice = parseInt(req.body.ice);
+        let trainer = req.body.trainer;
+
+        let total = fly + fight + fire + water + electric + ice;
+
+        let addQuery = `INSERT INTO tokimon VALUES (DEFAULT, '${toki}', ${weight}, ${height},
+        ${fly}, ${fight}, ${fire}, ${water}, ${electric}, ${ice}, ${total}, '${trainer}')
+        RETURNING id`;
+
+        console.log(req.body);
+        console.log(req.body.toki);
+        console.log(addQuery);
+
+        pool.query(addQuery, (error, result) => {
+            if (error) {
+                res.end(error.toString());
+            } else {
+                var results = result.rows[0];
+                res.redirect(`/tokimon/${results.id}`)
+            }
+        })
+    })
+
     .listen(PORT, () => console.log(`Listening on ${PORT}`));
