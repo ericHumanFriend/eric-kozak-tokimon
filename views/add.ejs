@@ -1,68 +1,68 @@
-
 <!DOCTYPE html>
 <html>
 
-    <div id=navigate>
-        <a href="/">Menu</a>
-        <a href="/add">Add</a>
-    </div>
+<div id=navigate>
+    <a href="/">Menu</a>
+    <a href="/add">Add</a>
+</div>
 
-    <head>
-        <title> Menu </title>
-        <link rel="stylesheet" href="css/tokimon.css">
-    </head>
+<head>
+    <title> Menu </title>
+    <link rel="stylesheet" href="css/tokimon.css">
+</head>
 
-    <body>
-        <form action="/add" method="post">
-            <table> Enter new tokimon attributes
-                <tr>
-                    <td>Name:</td>
-                    <td><input type="text" name="toki" required /></td>
-                </tr>
-                <tr>
-                    <td>Weight:</td>
-                    <td><input type="number" min=0 name="weight" step="any" required /></td>
-                </tr>
-                <tr>
-                    <td>Height:</td>
-                    <td><input type="number" min=0 name="height" step="any" required /></td>
-                </tr>
-                <tr>
-                    <td>Fly:</td>
-                    <td><input type="number" min=0 max=100 name="fly" step=1 required /></td>
-                </tr>
-                <tr>
-                    <td>Fight:</td>
-                    <td><input type="number" min=0 max=100 name="fight" step=1 required /></td>
-                </tr>
-                <tr>
-                    <td>Fire:</td>
-                    <td><input type="number" min=0 max=100 name="fire" step=1 required /></td>
-                </tr>
-                <tr>
-                    <td>Water:</td>
-                    <td><input type="number" min=0 max=100 name="water" step=1 required /></td>
-                </tr>
-                <tr>
-                    <td>Electric:</td>
-                    <td><input type="number" min=0 max=100 name="electric" step=1 required /></td>
-                </tr>
-                <tr>
-                    <td>Ice:</td>:</td>
-                    <td><input type="number" min=0 max=100 name="ice" step=1 required /></td>
-                </tr>
-                <tr>
-                    <td>Trainer:</td>
-                    <td><input type="text" name="trainer" required /></td>
-                </tr>
-            </table>
+<body>
+<form action="/add" method="post">
+    <table> Enter new tokimon attributes
+        <tr>
+            <td>Name:</td>
+            <td><input type="text" name="toki" required/></td>
+        </tr>
+        <tr>
+            <td>Weight:</td>
+            <td><input type="number" min=0 name="weight" step="any" required/></td>
+        </tr>
+        <tr>
+            <td>Height:</td>
+            <td><input type="number" min=0 name="height" step="any" required/></td>
+        </tr>
+        <tr>
+            <td>Fly:</td>
+            <td><input type="number" min=0 max=100 name="fly" step=1 required/></td>
+        </tr>
+        <tr>
+            <td>Fight:</td>
+            <td><input type="number" min=0 max=100 name="fight" step=1 required/></td>
+        </tr>
+        <tr>
+            <td>Fire:</td>
+            <td><input type="number" min=0 max=100 name="fire" step=1 required/></td>
+        </tr>
+        <tr>
+            <td>Water:</td>
+            <td><input type="number" min=0 max=100 name="water" step=1 required/></td>
+        </tr>
+        <tr>
+            <td>Electric:</td>
+            <td><input type="number" min=0 max=100 name="electric" step=1 required/></td>
+        </tr>
+        <tr>
+            <td>Ice:</td>
+            :</td>
+            <td><input type="number" min=0 max=100 name="ice" step=1 required/></td>
+        </tr>
+        <tr>
+            <td>Trainer:</td>
+            <td><input type="text" name="trainer" required/></td>
+        </tr>
+    </table>
 
-            <input type="submit" value="Add">
+    <input type="submit" value="Add">
 
-        </form>
+</form>
 
-    <script src="js/tokimon.js"></script>
+<script src="js/tokimon.js"></script>
 
-    </body>
+</body>
 
 </html>
