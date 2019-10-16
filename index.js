@@ -27,7 +27,10 @@ express()
                 res.end(error.toString());
             }
             let results = {'tokimon': result.rows};
-            res.render('menu', results)
-        })
+            res.render('menu', results);
+        });
+    })
+    .get('/add', (req, res) => {
+        res.render('add');
     })
     .listen(PORT, () => console.log(`Listening on ${PORT}`));
